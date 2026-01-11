@@ -3,11 +3,11 @@
 import sys
 import os
 
-# Load environment variables FIRST (before any other imports)
-from dotenv import load_dotenv
-load_dotenv()  # This loads .env from current directory or parent directories
 
-# Initialize OpenTelemetry BEFORE other imports
+from dotenv import load_dotenv
+load_dotenv()  # 
+
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 try:
@@ -821,3 +821,4 @@ async def handle_a2a_path(query: str, conversation_id: str) -> tuple[str, Dict[s
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8100)
+
